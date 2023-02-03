@@ -9,7 +9,7 @@ var paused  = true
 
 
 func _ready():
-	
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_tree().paused = true
 	menu.visible = true
 
