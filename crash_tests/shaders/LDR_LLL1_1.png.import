@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/LDR_LLL1_1.png-40de2c6eb222814e9877deb826b2e15d.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://crash_tests/shaders/LDR_LLL1_1.png"
+dest_files=[ "res://.import/LDR_LLL1_1.png-40de2c6eb222814e9877deb826b2e15d.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=true
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

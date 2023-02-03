@@ -1,0 +1,64 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/scenes/highway101/highway101.tscn" type="PackedScene" id=1]
+[ext_resource path="res://modules/HIGHWAY/post_process/pp_settings/01/highway_quad-pile__max-value.gdshader" type="Shader" id=2]
+[ext_resource path="res://modules/HIGHWAY/post_process/pp_settings/01/HighWay_vpl_blur_v3.gdshader" type="Shader" id=3]
+[ext_resource path="res://assets/misc/bayer16tile2.png" type="Texture" id=4]
+[ext_resource path="res://modules/HIGHWAY/post_process/pp_settings/01/dither_shader.gdshader" type="Shader" id=5]
+[ext_resource path="res://assets/graphics/misc/rr77omn1etp3ioxx.jpg" type="Texture" id=6]
+[ext_resource path="res://tests/viewport_trail/vp_trail__02.gd" type="Script" id=18]
+
+[sub_resource type="ShaderMaterial" id=10]
+shader = ExtResource( 2 )
+shader_param/bg_tex = ExtResource( 6 )
+
+[sub_resource type="QuadMesh" id=11]
+
+[sub_resource type="ViewportTexture" id=13]
+viewport_path = NodePath("ViewportContainer/Viewport")
+
+[sub_resource type="ShaderMaterial" id=12]
+resource_local_to_scene = true
+shader = ExtResource( 3 )
+shader_param/vp = SubResource( 13 )
+
+[sub_resource type="ShaderMaterial" id=16]
+resource_local_to_scene = true
+shader = ExtResource( 5 )
+shader_param/dither_tex = ExtResource( 4 )
+
+[sub_resource type="QuadMesh" id=14]
+
+[node name="highway_test_scene_01" type="Node2D"]
+script = ExtResource( 18 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+material = SubResource( 10 )
+position = Vector2( 679.75, 399.75 )
+scale = Vector2( 1360.5, 800.5 )
+mesh = SubResource( 11 )
+
+[node name="ViewportContainer" type="ViewportContainer" parent="."]
+material = SubResource( 12 )
+margin_right = 1360.0
+margin_bottom = 800.0
+
+[node name="Viewport" type="Viewport" parent="ViewportContainer"]
+size = Vector2( 1360, 800 )
+transparent_bg = true
+handle_input_locally = false
+hdr = false
+render_target_update_mode = 3
+shadow_atlas_size = 4096
+
+[node name="highway101" parent="ViewportContainer/Viewport" instance=ExtResource( 1 )]
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+copy_mode = 2
+
+[node name="dither_quad" type="MeshInstance2D" parent="."]
+modulate = Color( 0.572549, 1, 0.466667, 1 )
+material = SubResource( 16 )
+position = Vector2( 679.75, 399.75 )
+scale = Vector2( 1360.5, 800.5 )
+mesh = SubResource( 14 )

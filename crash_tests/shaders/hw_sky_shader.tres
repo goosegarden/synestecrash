@@ -1,0 +1,61 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "shader_type spatial;
+render_mode unshaded, world_vertex_coords;
+
+
+uniform sampler2D topclouds;
+//uniform sampler2D cloudtex1;
+uniform sampler2D cloudtex2;
+uniform vec3 sky_col = vec3(0.0,0.0,0.0);
+
+
+void fragment(){
+	
+	vec4 vot  = CAMERA_MATRIX * vec4(VERTEX, 0.0);
+	vot.y = 6.0 * (vot.y + 0.7);
+	vot = normalize(vot);
+	vec2 uvt = vec2(vot.x, vot.z);
+	uvt *= 3.0;
+	uvt.y += TIME *0.02;
+	
+//	vec4 vo  = CAMERA_MATRIX * vec4(VERTEX, 0.0);
+//	vo.y = 10.0 * (vo.y  + 0.0);
+//	vo = normalize(vo);
+//	vec2 uv = vec2(vo.x, vo.z);
+//	uv *= 7.0;
+//	uv.y += TIME *0.3;
+//
+
+	
+	vec4 vo2  = CAMERA_MATRIX * vec4(VERTEX, 0.0);
+	vo2.y = 8.0 * (vo2.y + 0.0);
+	vo2 = normalize(vo2);
+	vec2 uv2 = vec2(vo2.x, vo2.z);
+	uv2 *= 2.0;
+	uv2.x += TIME *0.2;
+	uv2.y += TIME *0.06;
+
+	
+	
+	
+//	vec4 texcloud1 = texture(cloudtex1, uv);
+//	texcloud1.r -= 0.5;
+	vec4 texcloud2 = texture(cloudtex2, uv2);
+	vec4 textop = texture(topclouds, uvt);
+	
+//	ALBEDO = (texcloud2.rgb + texcloud1.rgb*.3 + textop.rgb*.2)*.3 ;
+//	vec3 col  = (texcloud2.rgb + texcloud1.rgb*.3) + textop.rgb;
+//	vec3 col  = (texcloud2.rgb *.1) + textop.rgb * .1 + texcloud1.rgb *.1;
+	vec3 col  = (texcloud2.rgb *.2) + (textop.rgb) *  .04 ;
+	
+	vec3 vx = (vec4(VERTEX,1.0) * INV_CAMERA_MATRIX).xyz;
+	
+	ALBEDO = (col + col * sky_col * 10.0)  * (vx.y+2.0) * 0.004;
+//	ALBEDO = col + col * sky_col *10.0 ;
+
+	
+}
+
+"

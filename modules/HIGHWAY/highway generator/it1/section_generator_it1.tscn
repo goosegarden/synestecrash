@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://modules/HIGHWAY/highway generator/it1/section_generator_it1.gd" type="Script" id=1]
+
+[node name="section_generator_it1" type="Spatial"]
+script = ExtResource( 1 )

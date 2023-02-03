@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://modules/HIGHWAY/highway_world/tests/test_world.tscn" type="PackedScene" id=1]
+[ext_resource path="res://modules/HIGHWAY/post_process/pp_tests/pp_settings_02/pp_settings_2_test_01.gd" type="Script" id=2]
+[ext_resource path="res://modules/HIGHWAY/post_process/pp_settings/02_one_shader/pp_settings_02.tscn" type="PackedScene" id=3]
+
+[node name="pp_settings_2_test_02" type="Node2D"]
+script = ExtResource( 2 )
+scene_np = NodePath("test_world")
+setting_np = NodePath("pp_setting_02")
+
+[node name="pp_setting_02" parent="." instance=ExtResource( 3 )]
+blur_fac = 0.014
+trail_frequency = 0.026
+trail_fac = 0.4
+
+[node name="test_world" parent="." instance=ExtResource( 1 )]

@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://crash_tests/models/highway_parts/flat_road_shader_mat_01.tres" type="Material" id=1]
+[ext_resource path="res://crash_tests/models/highway_parts/Material_001.material" type="Material" id=2]
+[ext_resource path="res://crash_tests/models/highway_parts/flat_road_01.gd" type="Script" id=3]
+
+[sub_resource type="ArrayMesh" id=1]
+resource_name = "flat_road_01_Plane001"
+surfaces/0 = {
+"aabb": AABB( -45, 0, -500, 90, 1e-05, 500 ),
+"array_data": PoolByteArray( 0, 0, 52, 194, 0, 0, 0, 0, 0, 0, 250, 195, 0, 127, 127, 63, 0, 0, 0, 188, 0, 0, 52, 194, 0, 0, 0, 0, 0, 0, 0, 128, 0, 127, 127, 63, 0, 0, 0, 60, 0, 0, 52, 66, 0, 0, 0, 0, 0, 0, 0, 128, 0, 127, 129, 193, 0, 188, 0, 60, 0, 0, 52, 66, 0, 0, 0, 0, 0, 0, 250, 195, 0, 127, 129, 193, 0, 188, 0, 188, 51, 163, 155, 64, 0, 0, 0, 0, 0, 0, 0, 128, 0, 127, 129, 193, 0, 0, 0, 60, 51, 163, 155, 192, 0, 0, 0, 0, 0, 0, 0, 128, 0, 127, 127, 63, 0, 60, 0, 60, 51, 163, 155, 192, 0, 0, 0, 0, 0, 0, 250, 195, 0, 127, 127, 63, 0, 60, 0, 188, 51, 163, 155, 64, 0, 0, 0, 0, 0, 0, 250, 195, 0, 127, 129, 193, 0, 0, 0, 188 ),
+"array_index_data": PoolByteArray( 4, 0, 3, 0, 2, 0, 4, 0, 7, 0, 3, 0, 1, 0, 6, 0, 5, 0, 1, 0, 0, 0, 6, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 12,
+"material": ExtResource( 1 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 8
+}
+surfaces/1 = {
+"aabb": AABB( -101, 0, -500, 202, 1e-05, 500 ),
+"array_data": PoolByteArray( 0, 0, 202, 194, 0, 0, 0, 0, 0, 0, 0, 128, 0, 127, 127, 63, 0, 0, 0, 60, 0, 0, 202, 66, 0, 0, 0, 0, 0, 0, 0, 128, 0, 127, 127, 63, 0, 60, 0, 60, 0, 0, 202, 194, 0, 0, 0, 0, 0, 0, 250, 195, 0, 127, 127, 63, 0, 0, 0, 0, 0, 0, 202, 66, 0, 0, 0, 0, 0, 0, 250, 195, 0, 127, 127, 63, 0, 60, 0, 0, 0, 0, 52, 194, 0, 0, 0, 0, 0, 0, 250, 195, 0, 127, 127, 63, 0, 52, 0, 0, 0, 0, 52, 194, 0, 0, 0, 0, 0, 0, 0, 128, 0, 127, 127, 63, 0, 52, 0, 60, 0, 0, 52, 66, 0, 0, 0, 0, 0, 0, 0, 128, 0, 127, 127, 63, 0, 58, 0, 60, 0, 0, 52, 66, 0, 0, 0, 0, 0, 0, 250, 195, 0, 127, 127, 63, 0, 58, 0, 0, 51, 163, 155, 64, 0, 0, 0, 0, 0, 0, 0, 128, 0, 127, 127, 63, 110, 56, 0, 60, 51, 163, 155, 192, 0, 0, 0, 0, 0, 0, 0, 128, 0, 127, 127, 63, 34, 55, 0, 60, 51, 163, 155, 192, 0, 0, 0, 0, 0, 0, 250, 195, 0, 127, 127, 63, 34, 55, 0, 0, 51, 163, 155, 64, 0, 0, 0, 0, 0, 0, 250, 195, 0, 127, 127, 63, 110, 56, 0, 0 ),
+"array_index_data": PoolByteArray( 6, 0, 3, 0, 1, 0, 6, 0, 7, 0, 3, 0, 0, 0, 4, 0, 5, 0, 0, 0, 2, 0, 4, 0, 8, 0, 10, 0, 11, 0, 8, 0, 9, 0, 10, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 18,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 12
+}
+
+[node name="flat_road_01" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="flat_road" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )

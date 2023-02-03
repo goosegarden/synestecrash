@@ -1,0 +1,174 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/graphics/placeholder/18wheeler.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/scenes/highway101/highway_2.gd" type="Script" id=2]
+[ext_resource path="res://assets/graphics/placeholder/highway2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/graphics/placeholder/satellite.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/graphics/placeholder/da_car.tscn" type="PackedScene" id=6]
+
+[node name="hw_scene_02" type="Spatial"]
+
+[node name="lights" type="Spatial" parent="."]
+
+[node name="SpotLight" type="SpotLight" parent="lights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -12.1903, 23.1768, 21.6209 )
+light_color = Color( 0.843137, 1, 0.462745, 1 )
+spot_range = 16.096
+spot_attenuation = 0.535885
+spot_angle = 46.17
+spot_angle_attenuation = 1.23114
+
+[node name="SpotLight3" type="SpotLight" parent="lights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -12.1903, 23.1768, 54.6936 )
+light_color = Color( 0.843137, 1, 0.462745, 1 )
+spot_range = 16.096
+spot_attenuation = 0.535885
+spot_angle = 46.17
+spot_angle_attenuation = 1.23114
+
+[node name="SpotLight4" type="SpotLight" parent="lights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -12.1903, 23.1768, 71.1638 )
+light_color = Color( 0.843137, 1, 0.462745, 1 )
+spot_range = 16.096
+spot_attenuation = 0.535885
+spot_angle = 46.17
+spot_angle_attenuation = 1.23114
+
+[node name="SpotLight8" type="SpotLight" parent="lights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -12.1903, 23.1768, 137.454 )
+light_color = Color( 0.843137, 1, 0.462745, 1 )
+spot_range = 16.096
+spot_attenuation = 0.535885
+spot_angle = 46.17
+spot_angle_attenuation = 1.23114
+
+[node name="SpotLight11" type="SpotLight" parent="lights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.5884, 23.1768, 54.6936 )
+light_color = Color( 0.843137, 1, 0.462745, 1 )
+spot_range = 16.096
+spot_attenuation = 0.535885
+spot_angle = 46.17
+spot_angle_attenuation = 1.23114
+
+[node name="SpotLight22" type="SpotLight" parent="lights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -12.1903, 23.1768, -221.037 )
+light_color = Color( 0.843137, 1, 0.462745, 1 )
+spot_range = 16.096
+spot_attenuation = 0.535885
+spot_angle = 46.17
+spot_angle_attenuation = 1.23114
+
+[node name="SpotLight23" type="SpotLight" parent="lights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -12.1903, 23.1768, -187.964 )
+light_color = Color( 0.843137, 1, 0.462745, 1 )
+spot_range = 16.096
+spot_attenuation = 0.535885
+spot_angle = 46.17
+spot_angle_attenuation = 1.23114
+
+[node name="SpotLight24" type="SpotLight" parent="lights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -12.1903, 23.1768, -121.675 )
+light_color = Color( 0.843137, 1, 0.462745, 1 )
+spot_range = 16.096
+spot_attenuation = 0.535885
+spot_angle = 46.17
+spot_angle_attenuation = 1.23114
+
+[node name="SpotLight25" type="SpotLight" parent="lights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.5884, 23.1768, -187.964 )
+light_color = Color( 0.843137, 1, 0.462745, 1 )
+spot_range = 16.096
+spot_attenuation = 0.535885
+spot_angle = 46.17
+spot_angle_attenuation = 1.23114
+
+[node name="SpotLight13" type="SpotLight" parent="lights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.5884, 23.1768, 87.9108 )
+light_color = Color( 0.843137, 1, 0.462745, 1 )
+spot_range = 16.096
+spot_attenuation = 0.535885
+spot_angle = 46.17
+spot_angle_attenuation = 1.23114
+
+[node name="SpotLight19" type="SpotLight" parent="lights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -12.1903, 23.1768, -25.22 )
+light_color = Color( 0.843137, 1, 0.462745, 1 )
+spot_range = 16.096
+spot_attenuation = 0.535885
+spot_angle = 46.17
+spot_angle_attenuation = 1.23114
+
+[node name="SpotLight20" type="SpotLight" parent="lights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.5884, 23.1768, -91.5099 )
+light_color = Color( 0.843137, 1, 0.462745, 1 )
+spot_range = 16.096
+spot_attenuation = 0.535885
+spot_angle = 46.17
+spot_angle_attenuation = 1.23114
+
+[node name="SpotLight21" type="SpotLight" parent="lights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.5884, 23.1768, -41.8226 )
+light_color = Color( 0.843137, 1, 0.462745, 1 )
+spot_range = 16.096
+spot_attenuation = 0.535885
+spot_angle = 46.17
+spot_angle_attenuation = 1.23114
+
+[node name="highway_2" type="Spatial" parent="."]
+script = ExtResource( 2 )
+
+[node name="highway2" parent="highway_2" instance=ExtResource( 3 )]
+
+[node name="highway3" parent="highway_2" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -130 )
+
+[node name="highway4" parent="highway_2" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -260 )
+
+[node name="18wheeler" parent="highway_2" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3274, 10.4148, 0 )
+
+[node name="18wheeler4" parent="highway_2" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 15.435, 10.4002, -194.468 )
+
+[node name="18wheeler2" parent="highway_2" instance=ExtResource( 1 )]
+transform = Transform( -1, 0, -1.31134e-07, 0, 1, 0, 1.31134e-07, 0, -1, -15.0075, 10.4837, -17.4656 )
+
+[node name="18wheeler3" parent="highway_2" instance=ExtResource( 1 )]
+transform = Transform( -1, 0, -1.31134e-07, 0, 1, 0, 1.31134e-07, 0, -1, -14.6073, 10.4707, -173.305 )
+
+[node name="da_car" parent="highway_2" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9113, 10.3769, 27.9564 )
+
+[node name="da_car2" parent="highway_2" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.55218, 10.3769, -17.4656 )
+
+[node name="da_car7" parent="highway_2" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5105, 10.3769, -129.248 )
+
+[node name="da_car8" parent="highway_2" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.0311, 10.3769, -174.67 )
+
+[node name="da_car3" parent="highway_2" instance=ExtResource( 6 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -15.7576, 10.3769, 37.6674 )
+
+[node name="da_car4" parent="highway_2" instance=ExtResource( 6 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.04604, 10.3769, 83.0894 )
+
+[node name="da_car5" parent="highway_2" instance=ExtResource( 6 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9.40023, 10.3769, -118.172 )
+
+[node name="da_car6" parent="highway_2" instance=ExtResource( 6 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.04603, 10.3769, -72.7502 )
+
+[node name="satellite" parent="highway_2" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7324, 15.8427, 0 )
+
+[node name="satellite2" parent="highway_2" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.90376, 15.8427, 47.5979 )
+
+[node name="satellite3" parent="highway_2" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7929, 15.8427, -81.7307 )
+
+[node name="satellite4" parent="highway_2" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96432, 15.8427, -129.642 )

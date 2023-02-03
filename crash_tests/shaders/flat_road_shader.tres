@@ -1,0 +1,37 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "shader_type spatial;
+render_mode diffuse_burley, specular_schlick_ggx,  blend_mix, cull_disabled;
+
+
+uniform sampler2D tex;
+uniform vec3 col;
+uniform float fac;
+uniform bool playing = false;
+
+void fragment(){
+	vec4 road_tex = texture(tex, UV);
+	
+//	ALBEDO = road_tex.rgb * road_tex.rgb * (1.0 - fac * 5.0 ) + col * fac ;
+//	ALBEDO = road_tex.rgb * road_tex.rgb * (1.0 - fac * 0.12)  - (vec3(1.0,1.0,1.0) - col) * fac *0.12;
+//	ALBEDO = road_tex.rgb * col * fac;
+
+//	float l = length(road_tex.rgb * road_tex.rgb);
+//	ALBEDO = l  * fac * col *0.8 + (1.0 - fac) * (road_tex.rgb * road_tex.rgb) * l ;
+	if(playing) {
+		float l = length(road_tex.rgb * road_tex.rgb);
+		float l2 = length(fac * col);
+		float l3 = max (l,l2);
+		ALBEDO = mix((road_tex.rgb * road_tex.rgb),(road_tex.rgb * road_tex.rgb) -(vec3(0.2) - col)  + col, fac * 0.85)
+//		ALBEDO = mix((road_tex.rgb * road_tex.rgb), col, l2 - l )
+//		ALBEDO =  fac * col ;
+//		ALBEDO = max((road_tex.rgb * road_tex.rgb), fac * col * .1);
+		
+	}else{
+		ALBEDO = (road_tex.rgb * road_tex.rgb)
+	}
+	
+}
+
+"

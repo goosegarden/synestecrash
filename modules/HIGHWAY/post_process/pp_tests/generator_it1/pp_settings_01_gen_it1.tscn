@@ -1,0 +1,103 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://modules/HIGHWAY/post_process/pp_settings/01/HighWay_vpl_blur_v3.gdshader" type="Shader" id=2]
+[ext_resource path="res://assets/misc/bayer16tile2.png" type="Texture" id=3]
+[ext_resource path="res://tests/viewport_trail/vp_trail__02.gd" type="Script" id=4]
+[ext_resource path="res://modules/HIGHWAY/post_process/pp_settings/01/dither_shader.gdshader" type="Shader" id=5]
+[ext_resource path="res://modules/HIGHWAY/post_process/pp_settings/01/highway_quad-pile__max-value.gdshader" type="Shader" id=6]
+[ext_resource path="res://modules/HIGHWAY/highway_world/tests/test_world.tscn" type="PackedScene" id=7]
+[ext_resource path="res://workshop/graphic design/graphic_overlay_test_01_r2.png" type="Texture" id=8]
+[ext_resource path="res://workshop/fonts/Fatsans.ttf" type="DynamicFontData" id=9]
+
+[sub_resource type="ShaderMaterial" id=10]
+shader = ExtResource( 6 )
+
+[sub_resource type="QuadMesh" id=11]
+
+[sub_resource type="ViewportTexture" id=13]
+viewport_path = NodePath("ViewportContainer/Viewport")
+
+[sub_resource type="ShaderMaterial" id=12]
+resource_local_to_scene = true
+shader = ExtResource( 2 )
+shader_param/vp = SubResource( 13 )
+
+[sub_resource type="Environment" id=17]
+background_mode = 1
+ambient_light_color = Color( 0.172549, 0.192157, 0.27451, 1 )
+glow_enabled = true
+glow_intensity = 1.1
+glow_strength = 1.09
+glow_bloom = 0.09
+adjustment_enabled = true
+adjustment_contrast = 0.94
+adjustment_saturation = 1.1
+
+[sub_resource type="ShaderMaterial" id=16]
+resource_local_to_scene = true
+shader = ExtResource( 5 )
+shader_param/dither_tex = ExtResource( 3 )
+
+[sub_resource type="QuadMesh" id=14]
+
+[sub_resource type="DynamicFont" id=18]
+size = 64
+use_filter = true
+font_data = ExtResource( 9 )
+
+[node name="pp_setting_01_gen_it1" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+material = SubResource( 10 )
+position = Vector2( 679.75, 399.75 )
+scale = Vector2( 1360.5, 800.5 )
+mesh = SubResource( 11 )
+
+[node name="ViewportContainer" type="ViewportContainer" parent="."]
+material = SubResource( 12 )
+margin_right = 1360.0
+margin_bottom = 800.0
+
+[node name="Viewport" type="Viewport" parent="ViewportContainer"]
+size = Vector2( 1360, 800 )
+transparent_bg = true
+handle_input_locally = false
+hdr = false
+render_target_update_mode = 3
+shadow_atlas_size = 4096
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="ViewportContainer/Viewport"]
+environment = SubResource( 17 )
+
+[node name="test_world" parent="ViewportContainer/Viewport" instance=ExtResource( 7 )]
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+copy_mode = 2
+
+[node name="dither_quad" type="MeshInstance2D" parent="."]
+modulate = Color( 1, 0.505882, 0.741176, 1 )
+material = SubResource( 16 )
+position = Vector2( 679.75, 399.75 )
+scale = Vector2( 1360.5, 800.5 )
+mesh = SubResource( 14 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+modulate = Color( 0.894118, 1, 0.388235, 1 )
+margin_right = 1360.0
+margin_bottom = 800.0
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 1
+
+[node name="speed_lb" type="Label" parent="."]
+modulate = Color( 0.894118, 1, 0.388235, 0.768627 )
+margin_left = 947.0
+margin_top = 103.0
+margin_right = 1126.0
+margin_bottom = 216.0
+custom_fonts/font = SubResource( 18 )
+text = "000"
+align = 1
+valign = 1

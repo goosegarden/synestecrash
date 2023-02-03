@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://crash_tests/shaders/skies/bluedimclouds.png" type="Texture" id=2]
+[ext_resource path="res://crash_tests/shaders/hw_sky_shader.tres" type="Shader" id=3]
+
+[resource]
+shader = ExtResource( 3 )
+shader_param/sky_col = Vector3( 0, 0, 0 )
+shader_param/topclouds = ExtResource( 2 )
+shader_param/cloudtex2 = ExtResource( 2 )

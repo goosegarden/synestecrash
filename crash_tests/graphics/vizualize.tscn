@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://crash_tests/graphics/visualizer.gd" type="Script" id=1]
+
+[node name="vizualize" type="ColorRect"]
+margin_right = 800.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 800, 600 )
+color = Color( 0.0431373, 0.231373, 0.305882, 1 )
+script = ExtResource( 1 )

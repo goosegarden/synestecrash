@@ -1,0 +1,107 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://crash_tests/synesthecrash_scroll_game_01.tscn" type="PackedScene" id=1]
+[ext_resource path="res://crash_tests/graphics/menu_bg.png" type="Texture" id=2]
+[ext_resource path="res://crash_tests/main.gd" type="Script" id=3]
+[ext_resource path="res://workshop/fonts/Fatsans.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://crash_tests/menu.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=2]
+size = 36
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 36
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 12
+font_data = ExtResource( 4 )
+
+[node name="main" type="Node"]
+pause_mode = 2
+script = ExtResource( 3 )
+
+[node name="synesthecrash_scroll_game_01" parent="." instance=ExtResource( 1 )]
+pause_mode = 1
+
+[node name="menu" type="TextureRect" parent="."]
+pause_mode = 2
+margin_right = 1280.0
+margin_bottom = 720.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 1
+script = ExtResource( 5 )
+
+[node name="start_button" type="Button" parent="menu"]
+margin_left = 576.0
+margin_top = 193.0
+margin_right = 801.0
+margin_bottom = 287.0
+custom_fonts/font = SubResource( 2 )
+text = "START"
+flat = true
+
+[node name="start_button2" type="Button" parent="menu"]
+margin_left = 577.0
+margin_top = 331.0
+margin_right = 802.0
+margin_bottom = 425.0
+custom_fonts/font = SubResource( 3 )
+text = "QUIT"
+flat = true
+
+[node name="songlist" type="ItemList" parent="menu"]
+margin_left = 25.0
+margin_top = 156.0
+margin_right = 438.0
+margin_bottom = 608.0
+custom_fonts/font = SubResource( 1 )
+
+[node name="add_song" type="Button" parent="menu"]
+margin_left = 192.0
+margin_top = 624.0
+margin_right = 296.0
+margin_bottom = 672.0
+custom_fonts/font = SubResource( 1 )
+text = "add song"
+flat = true
+
+[node name="remove_song" type="Button" parent="menu"]
+margin_left = 312.0
+margin_top = 624.0
+margin_right = 419.0
+margin_bottom = 672.0
+custom_fonts/font = SubResource( 1 )
+text = "remove song"
+flat = true
+
+[node name="clear_list" type="Button" parent="menu"]
+margin_left = 56.0
+margin_top = 624.0
+margin_right = 163.0
+margin_bottom = 672.0
+custom_fonts/font = SubResource( 1 )
+text = "clear playlist"
+flat = true
+
+[node name="FileDialog" type="FileDialog" parent="menu"]
+margin_left = 509.0
+margin_top = 147.0
+margin_right = 956.0
+margin_bottom = 488.0
+window_title = "Open File(s)"
+dialog_text = "choose a song to add
+"
+mode = 1
+access = 2
+
+[connection signal="ready" from="synesthecrash_scroll_game_01" to="." method="_on_synesthecrash_scroll_game_01_ready"]
+[connection signal="playlist_updated" from="menu" to="." method="_on_menu_playlist_updated"]
+[connection signal="pressed" from="menu/start_button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="menu/start_button2" to="." method="_on_start_button2_pressed"]
+[connection signal="pressed" from="menu/add_song" to="menu" method="_on_add_song_pressed"]
+[connection signal="pressed" from="menu/remove_song" to="menu" method="_on_remove_song_pressed"]
+[connection signal="file_selected" from="menu/FileDialog" to="menu" method="_on_FileDialog_file_selected"]
+[connection signal="files_selected" from="menu/FileDialog" to="menu" method="_on_FileDialog_files_selected"]

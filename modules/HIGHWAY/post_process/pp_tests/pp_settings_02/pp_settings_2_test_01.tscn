@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://modules/HIGHWAY/post_process/pp_tests/pp_settings_02/pp_settings_2_test_01.gd" type="Script" id=1]
+[ext_resource path="res://dump/scenes/highway101/highway101.tscn" type="PackedScene" id=2]
+[ext_resource path="res://modules/HIGHWAY/post_process/pp_settings/02_one_shader/pp_settings_02.tscn" type="PackedScene" id=3]
+
+[node name="pp_settings_2_test_01" type="Node2D"]
+script = ExtResource( 1 )
+scene_np = NodePath("highway101")
+setting_np = NodePath("pp_setting_02")
+
+[node name="highway101" parent="." instance=ExtResource( 2 )]
+
+[node name="pp_setting_02" parent="." instance=ExtResource( 3 )]
+blur_fac = 0.014
+dither_scale = 8.0
+dither_fac = 0.5
+trail_frequency = 0.02
+trail_fac = 0.8
+mod_color = Color( 1, 0.6, 0.992157, 1 )

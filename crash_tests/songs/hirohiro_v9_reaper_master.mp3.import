@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/hirohiro_v9_reaper_master.mp3-c6763600acfbd42401e00f5d5df769ee.mp3str"
+
+[deps]
+
+source_file="res://crash_tests/songs/hirohiro_v9_reaper_master.mp3"
+dest_files=[ "res://.import/hirohiro_v9_reaper_master.mp3-c6763600acfbd42401e00f5d5df769ee.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
